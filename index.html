@@ -6,8 +6,23 @@
     <meta name="description" content="Купить спортивные товары онлайн. Мы предлагаем широкий ассортимент спортивной одежды, обуви и оборудования для разных видов спорта.">
     <meta name="keywords" content="спорт, спортивные товары, спортивная одежда, спортивная обувь, оборудование для спорта">
     <title>Спортивные товары — Купите все для спорта онлайн</title>
-		<link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="styles.css">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Спортивные товары",
+        "url": "https://example.com",
+        "logo": "https://example.com/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+7-900-123-4567",
+            "contactType": "customer service"
+        }
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -22,38 +37,65 @@
         </nav>
     </header>
 
-    <section id="catalog">
+    <section id="catalog" itemscope itemtype="https://schema.org/OfferCatalog">
         <h2>Наш каталог спортивных товаров</h2>
-        <p>Мы предлагаем товары для различных видов спорта, включая бег, фитнес, йогу, командные игры и многое другое. В нашем магазине вы найдете спортивную одежду, обувь, инвентарь и аксессуары для занятий спортом и активного отдыха.</p>
-        <h3>Популярные категории товаров:</h3>
+        <meta itemprop="name" content="Каталог спортивных товаров">
+        <p>Мы предлагаем товары для различных видов спорта, включая бег, фитнес, йогу, командные игры и многое другое.</p>
         <ul>
-            <li><a href="#">Одежда для фитнеса</a></li>
-            <li><a href="#">Спортивная обувь</a></li>
-            <li><a href="#">Тренажеры и оборудование</a></li>
-            <li><a href="#">Аксессуары для спорта</a></li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <a href="#" itemprop="url"><span itemprop="name">Купить одежду для фитнеса</span></a>
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <a href="#" itemprop="url"><span itemprop="name">Заказать спортивную обувь</span></a>
+            </li>
         </ul>
-        <img src="sport-clothes.jpg" alt="Спортивная одежда для фитнеса">
     </section>
 
     <section id="reviews">
         <h2>Отзывы наших клиентов</h2>
-        <blockquote>
-            <p>“Лучший магазин для покупки спортивных товаров! Удобный интерфейс и быстрая доставка.” — Иван, клиент.</p>
-        </blockquote>
-        <blockquote>
-            <p>“Купила спортивную обувь для бега. Очень довольна качеством и комфортом.” — Марина, клиент.</p>
-        </blockquote>
-    </section>
-
-    <section id="about">
-        <h2>О нас</h2>
-        <p>Наша компания занимается продажей спортивных товаров уже более 10 лет. Мы предоставляем нашим клиентам высококачественные товары от лучших производителей, а также отличный сервис и быструю доставку.</p>
-        <img src="about-us.jpg" alt="О нас - команда профессионалов">
+        <div itemscope itemtype="https://schema.org/Review">
+            <blockquote>
+                <p itemprop="reviewBody">“Лучший магазин для покупки спортивных товаров! Удобный интерфейс и быстрая доставка.”</p>
+                <p><span itemprop="author">Иван, клиент.</span></p>
+            </blockquote>
+        </div>
     </section>
 
     <section id="contact">
-        <h2>Контакты</h2>
-        <p>Если у вас возникли вопросы, мы всегда готовы помочь! Свяжитесь с нами по телефону или через форму обратной связи.</p>
+        <h2>Свяжитесь с нами</h2>
+        <div class="contact-methods">
+            <div class="contact-item">
+                <h3>Телефон</h3>
+                <p><a href="tel:+79001234567">+7 (900) 123-45-67</a></p>
+            </div>
+            <div class="contact-item">
+                <h3>Электронная почта</h3>
+                <p><a href="mailto:info@sportstore.ru">info@sportstore.ru</a></p>
+            </div>
+            <div class="contact-item">
+                <h3>Социальные сети</h3>
+                <ul class="social-links">
+                    <li><a href="https://vk.com/sportstore" target="_blank">ВКонтакте</a></li>
+                    <li><a href="https://t.me/sportstore" target="_blank">Telegram</a></li>
+                    <li><a href="https://wa.me/79001234567" target="_blank">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h3>Форма обратной связи</h3>
+            <form action="/submit-form" method="POST">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
     </section>
 
     <footer>
